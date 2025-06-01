@@ -3,8 +3,8 @@ package data
 import "context"
 
 type ExecutorManager[T any] interface {
-	Executor(context.Context) T
-	TxExecutor(context.Context) TxExecutor[T]
+	Executor() T
+	TxExecutor(context.Context) (TxExecutor[T], error)
 }
 
 type TxExecutor[T any] interface {

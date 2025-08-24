@@ -1,0 +1,22 @@
+all: false
+dir: '{{.InterfaceDir}}'
+filename: '.go'
+force-file-write: true
+formatter: goimports
+include-auto-generated: false
+log-level: info
+structname: '{{.Mock}}{{.InterfaceName}}'
+pkgname: '{{.SrcPackageName}}'
+recursive: false
+require-template-schema-exists: true
+template: testify
+template-schema: '{{.Template}}.schema.json'
+packages:
+  github.com/fkrhykal/data:
+    interfaces:
+       ExecutorManager:
+       TxExecutor:
+         config:
+          structname: "{{.Mock}}{{.InterfaceName}}"
+          pkgname: "{{.SrcPackageName}}"
+          filename: "executor_mock.go"

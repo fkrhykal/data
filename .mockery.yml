@@ -15,6 +15,10 @@ packages:
   github.com/fkrhykal/data:
     interfaces:
        ExecutorManager:
+        config:
+            structname: "{{.Mock}}{{.InterfaceName}}"
+            pkgname: "{{.SrcPackageName}}"
+            filename: "executor_mock.go"
        TxExecutor:
          config:
           structname: "{{.Mock}}{{.InterfaceName}}"
